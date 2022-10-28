@@ -13,6 +13,8 @@ class Tabs {
 		this.currentTab = 0
 		this.bindStylish()
 		this.parentEl.addEventListener('click', this.onParentElClick.bind(this))
+		this.getParentElChild(0, this.currentTab).classList.add(Tabs.CLASS_BUTTON)
+		this.getParentElChild(1, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
 	}
 
 	bindStylish() {
