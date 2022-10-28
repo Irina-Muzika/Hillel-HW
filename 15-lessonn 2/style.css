@@ -1,0 +1,24 @@
+.tab_button {
+    background-color: yellowgreen;
+    border: green;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+
+.tabs_divs_div {
+    display: none;
+}
+
+.tab_content {
+    display: block;
+    gap: 20px;
+    background-color: aqua;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
