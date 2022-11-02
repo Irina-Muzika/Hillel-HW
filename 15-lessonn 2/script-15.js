@@ -17,11 +17,12 @@ class Tabs {
 		this.currentTab = Tabs.DEFAULT_CURRENT_ITEM
 		this.bindStylish()
 		this.parentEl.addEventListener('click', this.onParentElClick.bind(this))
-		this.getParentElChild(Tabs.INDEX_NAV_ITEM, this.currentTab).classList.add(Tabs.CLASS_BUTTON)
-		this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
+		
 	}
 
 	bindStylish() {
+		this.getParentElChild(Tabs.INDEX_NAV_ITEM, this.currentTab).classList.add(Tabs.CLASS_BUTTON)
+		this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
 		this.parentEl.children[Tabs.INDEX_DIV_ITEM].classList.add(Tabs.CLASS_DIV_LIST)
 		this.parentEl.children[Tabs.INDEX_NAV_ITEM].classList.add(Tabs.CLASS_NAV_LIST)
 
@@ -36,7 +37,6 @@ class Tabs {
 
 		}
 	}
-
 
 	onParentElClick(e) {
 		if (e.target.classList.contains(Tabs.CLASS_NAVBUT)) {
