@@ -5,28 +5,35 @@ class Tabs {
 	static CLASS_CONTENT = 'tab_content'
 	static CLASS_NAVBUT = `tabs_nav_button`
 	static CLASS_DIVSCHILD = `tabs_divs_div`
+	static INDEX_NAV_ITEM = 0
+	static INDEX_DIV_ITEM = 1
+	static DEFAULT_CURRENT_ITEM = 0
+	
 
 
 
 	constructor(parentEl) {
 		this.parentEl = parentEl
-		this.currentTab = 0
+		this.currentTab = Tabs.DEFAULT_CURRENT_ITEM
 		this.bindStylish()
 		this.parentEl.addEventListener('click', this.onParentElClick.bind(this))
-		this.getParentElChild(0, this.currentTab).classList.add(Tabs.CLASS_BUTTON)
-		this.getParentElChild(1, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
+		this.getParentElChild(Tabs.INDEX_NAV_ITEM, this.currentTab).classList.add(Tabs.CLASS_BUTTON)
+		this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
 	}
 
 	bindStylish() {
-		this.parentEl.children[1].classList.add(Tabs.CLASS_DIV_LIST)
-		this.parentEl.children[0].classList.add(Tabs.CLASS_NAV_LIST)
+		this.parentEl.children[Tabs.INDEX_DIV_ITEM].classList.add(Tabs.CLASS_DIV_LIST)
+		this.parentEl.children[Tabs.INDEX_NAV_ITEM].classList.add(Tabs.CLASS_NAV_LIST)
 
-		const a = this.parentEl.children[0].children
-		const b = this.parentEl.children[1].children
+		const navEl = this.parentEl.children[Tabs.INDEX_NAV_ITEM].children
+		const divEl = this.parentEl.children[Tabs.INDEX_DIV_ITEM].children
 
-		for (let i = 0; i < a.length && i < b.length; i++) {
-			a[i].classList.add(Tabs.CLASS_NAVBUT)
-			b[i].classList.add(Tabs.CLASS_DIVSCHILD)
+		
+		for (let i = 0; i < navEl.length && i < divEl.length; i++) {
+			navEl[i].classList.add(Tabs.CLASS_NAVBUT)
+			divEl[i].classList.add(Tabs.CLASS_DIVSCHILD)
+			
+
 		}
 	}
 
@@ -35,13 +42,13 @@ class Tabs {
 		if (e.target.classList.contains(Tabs.CLASS_NAVBUT)) {
 
 			if (this.isTabElContEl()) {
-				this.getParentElChild(0, this.currentTab).classList.remove(Tabs.CLASS_BUTTON)
-				this.getParentElChild(1, this.currentTab).classList.remove(Tabs.CLASS_CONTENT)
+				this.getParentElChild(Tabs.INDEX_NAV_ITEM, this.currentTab).classList.remove(Tabs.CLASS_BUTTON)
+				this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.remove(Tabs.CLASS_CONTENT)
 			}
 
 			this.changeCurrentTab(e)
 
-			this.getParentElChild(1, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
+			this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
 		}
 	}
 
@@ -57,7 +64,7 @@ class Tabs {
 
 	changeCurrentTab(e) {
 		const buttonETarg = e.target
-		const arr = this.parentEl.children[0].children
+		const arr = this.parentEl.children[Tabs.INDEX_NAV_ITEM].children
 
 		for (let a = 0; a < arr.length; a++) {
 			if (arr[a] === buttonETarg) {
