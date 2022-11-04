@@ -33,6 +33,9 @@ function onLoginButtonClick(e) {
 
       clearInput()
     })
+    .catch((err) => {
+      console.log(err);
+    })
 }
 
 function removeTemplate() {
