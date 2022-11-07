@@ -49,7 +49,7 @@ function onFormElSubmit(e) {
     const todo = getTodo()
 
     if (inpEl.value.trim() === '') {
-        alert('введи валидное значение')
+        showError('введите валидное число')
         return
     }
 
