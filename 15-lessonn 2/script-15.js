@@ -46,7 +46,7 @@ class Tabs {
 				this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.remove(Tabs.CLASS_CONTENT)
 			}
 
-			this.changeCurrentTab(e)
+			this.changeCurrentTab(e.target)
 
 			this.getParentElChild(Tabs.INDEX_DIV_ITEM, this.currentTab).classList.add(Tabs.CLASS_CONTENT)
 		}
@@ -62,8 +62,7 @@ class Tabs {
 		return findTabsEl && findContEl
 	}
 
-	changeCurrentTab(e) {
-		const buttonETarg = e.target
+	changeCurrentTab(buttonETarg) {
 		const arr = this.parentEl.children[Tabs.INDEX_NAV_ITEM].children
 
 		for (let a = 0; a < arr.length; a++) {
