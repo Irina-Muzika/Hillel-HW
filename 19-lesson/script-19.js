@@ -14,10 +14,14 @@ function onalbumLinksListClick(e) {
     e.preventDefault()
 
     if (e.target.classList.contains('link')) {
-        const linkId = e.target.dataset.id
+        const linkId = getID(e.target)
 
         getList(`${URL_ALBUMS_PICTURES}${linkId}`, renderImg)
     }
+}
+
+function getID(el) {
+    return el.dataset.id
 }
 
 function getList(URL_ALBUMS_LINKS, method) {
