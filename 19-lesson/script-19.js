@@ -1,5 +1,6 @@
 const URL_ALBUMS_LINKS = 'https://jsonplaceholder.typicode.com/albums'
 const URL_ALBUMS_PICTURES = 'https://jsonplaceholder.typicode.com/photos?albumId='
+const DEFAULT_ID_IMG = '1'
 
 const albumLinksList = document.querySelector('.listAlbums')
 const albumPicturesList = document.querySelector('.listImg')
@@ -7,6 +8,7 @@ const albumPicturesList = document.querySelector('.listImg')
 albumLinksList.addEventListener('click', onalbumLinksListClick)
 
 getList(URL_ALBUMS_LINKS, renderLinks)
+getList(`${URL_ALBUMS_PICTURES}${DEFAULT_ID_IMG}`, renderImg)
 
 function onalbumLinksListClick(e) {
     e.preventDefault()
@@ -49,6 +51,5 @@ function getTempalteImg(img) {
 }
 
 function showError(err) {
-    console.log(err);
     alert(err.message)
 }
