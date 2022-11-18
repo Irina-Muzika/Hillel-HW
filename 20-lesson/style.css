@@ -1,0 +1,36 @@
+.divtextarea {
+    background-color: aquamarine;
+    width: 300px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notesList{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    display: block;
+}
+
+.textarea {
+    margin: 0 50px 20px;
+    width: 200px;
+    height: 30px;
+
+}
+
+.delete {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.border {
+    border: 0.1px solid black;
+}
