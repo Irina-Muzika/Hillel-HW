@@ -1,0 +1,17 @@
+.flex{
+    display: flex;
+justify-content: space-around;
+}
+
+.listAlbums{
+    display: flex;
+    flex-direction: column;
+}
+
+.link{
+    width: fit-content;
+}
+
+.listImg{
+  width: 50%;
+}
