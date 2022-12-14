@@ -73,6 +73,5 @@ function taskBuild() {
 }
 
 
-
 exports.build = taskBuild();
 exports.serve = series(taskBuild(), serve);
