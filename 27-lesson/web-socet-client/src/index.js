@@ -3,7 +3,9 @@ import Server from "./Server.js"
 const formEl = document.querySelector('.form')
 const inputs = document.querySelectorAll('.inp')
 const ulEl = document.querySelector('.ul')
-const ws = new Server()
+const ws = new Server({
+    onMessage: renderMessage
+})
 
 
 formEl.addEventListener('submit', onFormElSubmit)
@@ -22,6 +24,12 @@ function onFormElSubmit(e) {
     clearForm()
 }
 
+function renderMessage(data) {
+    const liEl = getTemplate(data)
+        
+    ulEl.insertAdjacentHTML('beforeend', liEl)
+}
+
 function getTemplate({ message, name }) {
     return `<li>${name}: ${message}</li>`
 }
@@ -29,5 +37,3 @@ function getTemplate({ message, name }) {
 function clearForm() {
     formEl.reset()
 }
-
-export { getTemplate, ulEl }
