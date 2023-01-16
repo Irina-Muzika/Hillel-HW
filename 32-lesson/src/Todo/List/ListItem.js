@@ -18,14 +18,8 @@ export default function ListItem({ todo }) {
         dispatch(deleteTodo(todo.id));
     }
 
-    function onLiElClick(e) {
-        e.stopPropagation();
-
-        dispatch(statusChangeTodo(todo))
-    }
-
     return (
-        <li className={done} onClick={onLiElClick}>
+        <li className={done} onClick={() => dispatch(statusChangeTodo(todo))}>
             <span>{todo.title}</span>
             <button onClick={onEditBtnClick}>[Edit]</button>
             <button onClick={onDeleteBtnClick}>[Delete]</button>

@@ -42,7 +42,6 @@ export function deleteTodo(payload) {
 }
 
 export function updateTodo(payload) {
-    console.log(payload);
     return (dispatch) => {
         TodoApi.update(payload.id, payload).then(() => {
             dispatch({ type: ACTION_TODO_UPDATE, payload });
