@@ -50,7 +50,6 @@ export function updateTodo(payload) {
 }
 
 export function statusChangeTodo(payload) {
-    console.log(payload);
     return (dispatch) => {
         TodoApi.update(payload.id, { done: !payload.done }).then(() => {
             dispatch({ type: ACTION_TODO_STATUS_CHANGE, payload });
