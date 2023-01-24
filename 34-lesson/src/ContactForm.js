@@ -35,7 +35,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={formik.handleSubmit}>
       <div>
-        <label htmlFor="firstName" >First Name</label>
+        <label htmlFor="firstName" className={styles.label_firstName}>First Name</label>
         <input className={styles.input_firstName}
           id="firstName"
           type="text"
@@ -45,7 +45,7 @@ export default function ContactForm() {
         <Error value={formik.errors.firstName} />
       </div>
       <div>
-        <label htmlFor="email">email</label>
+        <label htmlFor="email" className={styles.label_email}>email</label>
         <input className={styles.input_email}
           id="email"
           type="text"
@@ -55,10 +55,10 @@ export default function ContactForm() {
         <Error value={formik.errors.email} />
       </div>
       <div>
-        <label htmlFor="phone">Phone</label>
+        <label htmlFor="phone" className={styles.label_phone}>Phone</label>
         <input className={styles.input_phone}
           id="phone"
-          type="text"
+          type="number"
           value={formik.values.phone}
           onChange={formik.handleChange}
         />
@@ -70,6 +70,6 @@ export default function ContactForm() {
   );
 }
 
-function Error({ value }) {
+function Error({ value}) {
   return value ? <span className={styles.error}>{value}</span> : null;
 }
