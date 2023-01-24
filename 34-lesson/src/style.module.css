@@ -1,0 +1,23 @@
+.error {
+    color:deeppink;
+    margin-left: 10px;
+}
+.input_firstName {
+  margin-left: 10px;
+    color: blue;
+    border-color: chartreuse;
+}
+.input_email{
+    margin-left: 10px;
+    color: darkorange;
+    border-color:fuchsia
+}
+.input_phone{
+    margin-left: 10px;
+    color: slateblue;
+    border-color:mediumturquoise
+}
+.btn{
+    width: 60px;
+    border-color:red
+}
