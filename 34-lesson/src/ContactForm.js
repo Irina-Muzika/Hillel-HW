@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
+import Error from './Error';
 import styles from './style.module.css';
 
 const validationSchema = Yup.object({
@@ -70,6 +70,4 @@ export default function ContactForm() {
   );
 }
 
-function Error({ value}) {
-  return value ? <span className={styles.error}>{value}</span> : null;
-}
+
