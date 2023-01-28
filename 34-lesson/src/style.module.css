@@ -1,0 +1,49 @@
+.error {
+    color:deeppink;
+    margin-left: 10px;
+}
+.input_firstName {
+  margin-left: 10px;
+    color: blue;
+    border-color: chartreuse;
+    border-radius: 20px;
+}
+.input_email{
+    margin-left: 50px;
+    margin-top: 10px;
+    color: darkorange;
+    border-color:fuchsia;
+    border-radius: 20px
+    
+}
+.input_phone{
+    margin-left: 46px;
+    margin-top: 10px;
+    color: slateblue;
+    border-color:mediumturquoise;
+    border-radius: 20px 
+}
+
+.btn{
+    margin-left: 87px;
+    margin-top: 10px;
+    width: 60px;
+    border-color:red;
+    border-radius: 15px
+}
+
+.label_email{
+    font-family: cursive;
+    color:crimson
+    
+}
+
+.label_firstName{
+    font-family: cursive;
+    color:dodgerblue
+}
+
+.label_phone{
+    font-family: cursive;
+color:seagreen
+}
